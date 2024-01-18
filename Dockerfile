@@ -1,5 +1,7 @@
 FROM ubuntu 
 
+LABEL authors="Isaac Weingarten, Yehuda Goldshtein"
+
 RUN apt search openjdk
 
 RUN apt-get update && \ 
@@ -11,6 +13,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
 
 RUN java -version
+RUN swig -version
 
 WORKDIR /pjsip
 
@@ -80,7 +83,6 @@ RUN make dep && make clean && make >> /pjsip/build_pjsip.log 2>&1
 
 # building the sample app to get the swig files
 
-RUN swig -version
 RUN cd /pjsip/pjproject/pjsip-apps/src/swig
 RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: APP-BUILD :: make"
 RUN make >> /pjsip/build_pjsip.log 2>&1

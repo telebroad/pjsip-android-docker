@@ -8,8 +8,7 @@ services:
     image: pjsip-android-docker:latest  # Name of the image to build
     container_name: pjsip-android-docker  # Name of the container
     volumes:
-      - ./data:/pjsip/data  # Mount local 'data' directory to 'data' in the container
-      - ./build:/pjsip/build
+      - ./build:/pjsip/build # Mount local 'build' directory to 'pjsip/build' in the container
     environment:
       - a=1
 
