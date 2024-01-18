@@ -84,7 +84,7 @@ RUN make dep && make clean && make >> /pjsip/build_pjsip.log 2>&1
 # building the sample app to get the swig files
 
 RUN cd /pjsip/pjproject/pjsip-apps/src/swig
-RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: APP-BUILD :: make"
+RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: APP-BUILD :: make" >> /pjsip/build_pjsip.log 2>&1
 RUN make >> /pjsip/build_pjsip.log 2>&1
 
 
