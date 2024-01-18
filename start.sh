@@ -9,4 +9,3 @@ cp /pjsip/build_pjsip.log /pjsip/build/
 echo "COPIED FILES"
 echo "to find files go to /pjsip/build/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a"
 echo "/pjsip/build should be bind to build"
-# top -b
