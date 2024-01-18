@@ -42,8 +42,34 @@ ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-r26b
 ENV ANDROID_TARGET_API=21
 ENV ANDROID_TARGET_ABI=arm64-v8a
 ENV GCC_VERSION=4.9
-RUN ./openssl_build.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI} ${GCC_VERSION}
-#Then copy the libraries into lib folder:
+
+# ENV WORK_PATH=/pjsip/openssl_for_android
+# ENV OPENSSL_SOURCES_PATH=${WORK_PATH}/openssl-3.2.0
+# ENV OUTPUT_PATH=${WORK_PATH}/openssl_3.2.0_${ANDROID_TARGET_ABI}
+# ENV OPENSSL_TMP_FOLDER=/tmp/openssl_${ANDROID_TARGET_ABI}
+
+# RUN mkdir -p ${OPENSSL_TMP_FOLDER}
+# RUN cp -r ${OPENSSL_SOURCES_PATH}/* ${OPENSSL_TMP_FOLDER}
+
+# RUN PATH=${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/linux-x86_64/bin:${ANDROID_NDK_ROOT}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:${ANDROID_NDK_ROOT}/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin:$PATH
+# WORKDIR ${OPENSSL_TMP_FOLDER}
+RUN ./openssl_build.sh 
+# RUN ./Configure android-arm64 -D__ANDROID_API__=${ANDROID_TARGET_API} -static no-asm no-shared no-tests --prefix=${OUTPUT_PATH}
+# WORKDIR ${OUTPUT_PATH}
+# RUN mkdir -p ${OUTPUT_PATH}
+# RUN make && make install
+# RUN rm -rf ${OPENSSL_TMP_FOLDER}
+# RUN rm -rf ${OUTPUT_PATH}/bin
+# RUN rm -rf ${OUTPUT_PATH}/share
+# RUN rm -rf ${OUTPUT_PATH}/ssl
+# RUN rm -rf ${OUTPUT_PATH}/lib/engines*
+# RUN rm -rf ${OUTPUT_PATH}/lib/pkgconfig
+# RUN rm -rf ${OUTPUT_PATH}/lib/ossl-modules
+# RUN echo "Build completed! Check output libraries in ${OUTPUT_PATH}"
+
+
+
+# RUN ./openssl_build.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI} ${GCC_VERSION}
 WORKDIR /pjsip/openssl_for_android/openssl-3.2.0
 
 WORKDIR /pjsip/pjproject

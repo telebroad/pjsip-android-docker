@@ -1,5 +1,5 @@
 #!/bin/bash -e
-
+set -x
 # used https://github.com/217heidai/openssl_for_android/blob/master/openssl_build.sh
 
 WORK_PATH=$(cd "$(dirname "$0")";pwd)
@@ -11,6 +11,8 @@ OUTPUT_PATH=${WORK_PATH}/openssl_3.2.0_${ANDROID_TARGET_ABI}
 
 OPENSSL_TMP_FOLDER=/tmp/openssl_${ANDROID_TARGET_ABI}
 mkdir -p ${OPENSSL_TMP_FOLDER}
+echo ${WORK_PATH}
+echo cp -r ${OPENSSL_SOURCES_PATH}/* ${OPENSSL_TMP_FOLDER}
 cp -r ${OPENSSL_SOURCES_PATH}/* ${OPENSSL_TMP_FOLDER}
 
 
