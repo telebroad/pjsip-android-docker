@@ -1,0 +1,985 @@
+output/pjsip-ua-aarch64-unknown-linux-android/sip_inv.o: ../src/pjsip-ua/sip_inv.c ../include/pjsip-ua/sip_inv.h \
+  ../include/pjsip/sip_dialog.h ../include/pjsip/sip_msg.h \
+  ../include/pjsip/sip_types.h ../include/pjsip/sip_config.h \
+  ../../pjlib/include/pj/types.h ../../pjlib/include/pj/config.h \
+  ../../pjlib/include/pj/compat/cc_clang.h \
+  ../../pjlib/include/pj/compat/os_auto.h \
+  ../../pjlib/include/pj/compat/m_auto.h \
+  ../../pjlib/include/pj/compat/size_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/__stddef_max_align_t.h \
+  ../../pjlib/include/pj/config_site.h \
+  ../../pjlib/include/pj/config_site_sample.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wchar_limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/cdefs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/versioning.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/api-level.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h \
+  ../../pjlib/include/pj/limits.h ../../pjlib/include/pj/compat/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/float.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/posix_limits.h \
+  ../include/pjsip/sip_autoconf.h ../include/pjsip/sip_uri.h \
+  ../../pjlib/include/pj/assert.h ../../pjlib/include/pj/compat/assert.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/assert.h \
+  ../../pjlib/include/pj/list.h \
+  ../../pjlib-util/include/pjlib-util/scanner.h \
+  ../../pjlib-util/include/pjlib-util/types.h \
+  ../../pjlib-util/include/pjlib-util/config.h \
+  ../../pjlib-util/include/pjlib-util/scanner_cis_bitwise.h \
+  ../include/pjsip/sip_auth.h ../include/pjsip/sip_auth_msg.h \
+  ../include/pjsip/sip_errno.h ../../pjlib/include/pj/errno.h \
+  ../../pjlib/include/pj/compat/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdarg.h \
+  ../include/pjsip/sip_transport.h ../include/pjsip/sip_parser.h \
+  ../include/pjsip/sip_resolve.h \
+  ../../pjlib-util/include/pjlib-util/resolver.h \
+  ../../pjlib-util/include/pjlib-util/dns.h \
+  ../../pjlib/include/pj/sock.h ../../pjlib/include/pj/compat/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/int-ll64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/pthread_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/uio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sa_family_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/select.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/timespec.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sigcontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sve_context.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/signal_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal-defs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ucontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/user.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/libc-compat.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_msfilter.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/in_addr.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_mreq_source.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/byteorder.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/byteorder/little_endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ipv6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in_systm.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/ip.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/net/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/hdlc/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ifaddrs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arpa/inet.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits-common.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tty.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno-base.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netdb.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/getopt.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/lockf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/seek_constants.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sysconf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_unistd_inlines.h \
+  ../../pjlib/include/pj/ioqueue.h ../../pjlib/include/pj/timer.h \
+  ../../pjlib/include/pj/lock.h ../include/pjsip/sip_util.h \
+  ../../pjmedia/include/pjmedia/sdp_neg.h \
+  ../../pjmedia/include/pjmedia/sdp.h \
+  ../../pjmedia/include/pjmedia/types.h \
+  ../../pjmedia/include/pjmedia/config.h \
+  ../../pjmedia/include/pjmedia/config_auto.h \
+  ../include/pjsip-ua/sip_100rel.h ../include/pjsip-ua/sip_timer.h \
+  ../include/pjsip/print_util.h ../include/pjsip/sip_module.h \
+  ../include/pjsip/sip_endpoint.h ../include/pjsip/sip_event.h \
+  ../include/pjsip/sip_multipart.h ../include/pjsip/sip_transaction.h \
+  ../../pjmedia/include/pjmedia/errno.h ../../pjlib/include/pj/array.h \
+  ../../pjlib/include/pj/string.h ../../pjlib/include/pj/compat/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/xlocale.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/strcasecmp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/alloca.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/malloc.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_stdlib_inlines.h \
+  ../../pjlib/include/pj/pool.h ../../pjlib/include/pj/os.h \
+  ../../pjlib/include/pj/log.h ../../pjlib/include/pj/rand.h
+output/pjsip-ua-aarch64-unknown-linux-android/sip_reg.o: ../src/pjsip-ua/sip_reg.c ../include/pjsip-ua/sip_regc.h \
+  ../include/pjsip/sip_types.h ../include/pjsip/sip_config.h \
+  ../../pjlib/include/pj/types.h ../../pjlib/include/pj/config.h \
+  ../../pjlib/include/pj/compat/cc_clang.h \
+  ../../pjlib/include/pj/compat/os_auto.h \
+  ../../pjlib/include/pj/compat/m_auto.h \
+  ../../pjlib/include/pj/compat/size_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/__stddef_max_align_t.h \
+  ../../pjlib/include/pj/config_site.h \
+  ../../pjlib/include/pj/config_site_sample.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wchar_limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/cdefs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/versioning.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/api-level.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h \
+  ../../pjlib/include/pj/limits.h ../../pjlib/include/pj/compat/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/float.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/posix_limits.h \
+  ../include/pjsip/sip_autoconf.h ../include/pjsip/sip_auth.h \
+  ../include/pjsip/sip_auth_msg.h ../include/pjsip/sip_msg.h \
+  ../include/pjsip/sip_uri.h ../../pjlib/include/pj/assert.h \
+  ../../pjlib/include/pj/compat/assert.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/assert.h \
+  ../../pjlib/include/pj/list.h \
+  ../../pjlib-util/include/pjlib-util/scanner.h \
+  ../../pjlib-util/include/pjlib-util/types.h \
+  ../../pjlib-util/include/pjlib-util/config.h \
+  ../../pjlib-util/include/pjlib-util/scanner_cis_bitwise.h \
+  ../include/pjsip/sip_transport.h ../include/pjsip/sip_parser.h \
+  ../include/pjsip/sip_resolve.h \
+  ../../pjlib-util/include/pjlib-util/resolver.h \
+  ../../pjlib-util/include/pjlib-util/dns.h \
+  ../../pjlib/include/pj/sock.h ../../pjlib/include/pj/compat/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/int-ll64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/pthread_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/uio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sa_family_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/select.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/timespec.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sigcontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sve_context.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/signal_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal-defs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ucontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/user.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/libc-compat.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_msfilter.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/in_addr.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_mreq_source.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/byteorder.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/byteorder/little_endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ipv6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in_systm.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/ip.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/net/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/hdlc/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ifaddrs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arpa/inet.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits-common.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tty.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno-base.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netdb.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/getopt.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/lockf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/seek_constants.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sysconf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_unistd_inlines.h \
+  ../../pjlib/include/pj/ioqueue.h ../../pjlib/include/pj/timer.h \
+  ../../pjlib/include/pj/lock.h ../include/pjsip/sip_endpoint.h \
+  ../include/pjsip/sip_module.h ../include/pjsip/sip_transaction.h \
+  ../include/pjsip/sip_util.h ../include/pjsip/sip_event.h \
+  ../include/pjsip/sip_errno.h ../../pjlib/include/pj/errno.h \
+  ../../pjlib/include/pj/compat/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdarg.h \
+  ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/os.h \
+  ../../pjlib/include/pj/pool.h ../../pjlib/include/pj/log.h \
+  ../../pjlib/include/pj/rand.h ../../pjlib/include/pj/string.h \
+  ../../pjlib/include/pj/compat/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/xlocale.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/strcasecmp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/alloca.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/malloc.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_stdlib_inlines.h
+output/pjsip-ua-aarch64-unknown-linux-android/sip_replaces.o: ../src/pjsip-ua/sip_replaces.c \
+  ../include/pjsip-ua/sip_replaces.h ../include/pjsip/sip_msg.h \
+  ../include/pjsip/sip_types.h ../include/pjsip/sip_config.h \
+  ../../pjlib/include/pj/types.h ../../pjlib/include/pj/config.h \
+  ../../pjlib/include/pj/compat/cc_clang.h \
+  ../../pjlib/include/pj/compat/os_auto.h \
+  ../../pjlib/include/pj/compat/m_auto.h \
+  ../../pjlib/include/pj/compat/size_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/__stddef_max_align_t.h \
+  ../../pjlib/include/pj/config_site.h \
+  ../../pjlib/include/pj/config_site_sample.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wchar_limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/cdefs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/versioning.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/api-level.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h \
+  ../../pjlib/include/pj/limits.h ../../pjlib/include/pj/compat/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/float.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/posix_limits.h \
+  ../include/pjsip/sip_autoconf.h ../include/pjsip/sip_uri.h \
+  ../../pjlib/include/pj/assert.h ../../pjlib/include/pj/compat/assert.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/assert.h \
+  ../../pjlib/include/pj/list.h \
+  ../../pjlib-util/include/pjlib-util/scanner.h \
+  ../../pjlib-util/include/pjlib-util/types.h \
+  ../../pjlib-util/include/pjlib-util/config.h \
+  ../../pjlib-util/include/pjlib-util/scanner_cis_bitwise.h \
+  ../include/pjsip-ua/sip_inv.h ../include/pjsip/sip_dialog.h \
+  ../include/pjsip/sip_auth.h ../include/pjsip/sip_auth_msg.h \
+  ../include/pjsip/sip_errno.h ../../pjlib/include/pj/errno.h \
+  ../../pjlib/include/pj/compat/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdarg.h \
+  ../include/pjsip/sip_transport.h ../include/pjsip/sip_parser.h \
+  ../include/pjsip/sip_resolve.h \
+  ../../pjlib-util/include/pjlib-util/resolver.h \
+  ../../pjlib-util/include/pjlib-util/dns.h \
+  ../../pjlib/include/pj/sock.h ../../pjlib/include/pj/compat/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/int-ll64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/pthread_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/uio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sa_family_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/select.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/timespec.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sigcontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sve_context.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/signal_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal-defs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ucontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/user.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/libc-compat.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_msfilter.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/in_addr.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_mreq_source.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/byteorder.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/byteorder/little_endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ipv6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in_systm.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/ip.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/net/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/hdlc/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ifaddrs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arpa/inet.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits-common.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tty.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno-base.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netdb.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/getopt.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/lockf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/seek_constants.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sysconf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_unistd_inlines.h \
+  ../../pjlib/include/pj/ioqueue.h ../../pjlib/include/pj/timer.h \
+  ../../pjlib/include/pj/lock.h ../include/pjsip/sip_util.h \
+  ../../pjmedia/include/pjmedia/sdp_neg.h \
+  ../../pjmedia/include/pjmedia/sdp.h \
+  ../../pjmedia/include/pjmedia/types.h \
+  ../../pjmedia/include/pjmedia/config.h \
+  ../../pjmedia/include/pjmedia/config_auto.h \
+  ../include/pjsip/print_util.h ../include/pjsip/sip_endpoint.h \
+  ../include/pjsip/sip_ua_layer.h ../../pjlib/include/pj/log.h \
+  ../../pjlib/include/pj/pool.h ../../pjlib/include/pj/string.h \
+  ../../pjlib/include/pj/compat/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/xlocale.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/strcasecmp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/alloca.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/malloc.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_stdlib_inlines.h
+output/pjsip-ua-aarch64-unknown-linux-android/sip_xfer.o: ../src/pjsip-ua/sip_xfer.c ../include/pjsip-ua/sip_xfer.h \
+  ../include/pjsip-simple/evsub.h ../include/pjsip-simple/types.h \
+  ../include/pjsip/sip_types.h ../include/pjsip/sip_config.h \
+  ../../pjlib/include/pj/types.h ../../pjlib/include/pj/config.h \
+  ../../pjlib/include/pj/compat/cc_clang.h \
+  ../../pjlib/include/pj/compat/os_auto.h \
+  ../../pjlib/include/pj/compat/m_auto.h \
+  ../../pjlib/include/pj/compat/size_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/__stddef_max_align_t.h \
+  ../../pjlib/include/pj/config_site.h \
+  ../../pjlib/include/pj/config_site_sample.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wchar_limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/cdefs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/versioning.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/api-level.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h \
+  ../../pjlib/include/pj/limits.h ../../pjlib/include/pj/compat/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/float.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/posix_limits.h \
+  ../include/pjsip/sip_autoconf.h ../include/pjsip/sip_msg.h \
+  ../include/pjsip/sip_uri.h ../../pjlib/include/pj/assert.h \
+  ../../pjlib/include/pj/compat/assert.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/assert.h \
+  ../../pjlib/include/pj/list.h \
+  ../../pjlib-util/include/pjlib-util/scanner.h \
+  ../../pjlib-util/include/pjlib-util/types.h \
+  ../../pjlib-util/include/pjlib-util/config.h \
+  ../../pjlib-util/include/pjlib-util/scanner_cis_bitwise.h \
+  ../include/pjsip-simple/evsub_msg.h ../include/pjsip/sip_dialog.h \
+  ../include/pjsip/sip_auth.h ../include/pjsip/sip_auth_msg.h \
+  ../include/pjsip/sip_errno.h ../../pjlib/include/pj/errno.h \
+  ../../pjlib/include/pj/compat/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdarg.h \
+  ../include/pjsip/sip_transport.h ../include/pjsip/sip_parser.h \
+  ../include/pjsip/sip_resolve.h \
+  ../../pjlib-util/include/pjlib-util/resolver.h \
+  ../../pjlib-util/include/pjlib-util/dns.h \
+  ../../pjlib/include/pj/sock.h ../../pjlib/include/pj/compat/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/int-ll64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/pthread_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/uio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sa_family_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/select.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/timespec.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sigcontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sve_context.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/signal_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal-defs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ucontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/user.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/libc-compat.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_msfilter.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/in_addr.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_mreq_source.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/byteorder.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/byteorder/little_endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ipv6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in_systm.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/ip.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/net/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/hdlc/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ifaddrs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arpa/inet.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits-common.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tty.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno-base.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netdb.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/getopt.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/lockf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/seek_constants.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sysconf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_unistd_inlines.h \
+  ../../pjlib/include/pj/ioqueue.h ../../pjlib/include/pj/timer.h \
+  ../../pjlib/include/pj/lock.h ../include/pjsip/sip_util.h \
+  ../include/pjsip/sip_endpoint.h ../include/pjsip/sip_module.h \
+  ../../pjlib/include/pj/pool.h ../../pjlib/include/pj/string.h \
+  ../../pjlib/include/pj/compat/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/xlocale.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/strcasecmp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/alloca.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/malloc.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_stdlib_inlines.h
+output/pjsip-ua-aarch64-unknown-linux-android/sip_100rel.o: ../src/pjsip-ua/sip_100rel.c \
+  ../include/pjsip-ua/sip_100rel.h ../include/pjsip-ua/sip_inv.h \
+  ../include/pjsip/sip_dialog.h ../include/pjsip/sip_msg.h \
+  ../include/pjsip/sip_types.h ../include/pjsip/sip_config.h \
+  ../../pjlib/include/pj/types.h ../../pjlib/include/pj/config.h \
+  ../../pjlib/include/pj/compat/cc_clang.h \
+  ../../pjlib/include/pj/compat/os_auto.h \
+  ../../pjlib/include/pj/compat/m_auto.h \
+  ../../pjlib/include/pj/compat/size_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/__stddef_max_align_t.h \
+  ../../pjlib/include/pj/config_site.h \
+  ../../pjlib/include/pj/config_site_sample.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wchar_limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/cdefs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/versioning.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/api-level.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h \
+  ../../pjlib/include/pj/limits.h ../../pjlib/include/pj/compat/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/float.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/posix_limits.h \
+  ../include/pjsip/sip_autoconf.h ../include/pjsip/sip_uri.h \
+  ../../pjlib/include/pj/assert.h ../../pjlib/include/pj/compat/assert.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/assert.h \
+  ../../pjlib/include/pj/list.h \
+  ../../pjlib-util/include/pjlib-util/scanner.h \
+  ../../pjlib-util/include/pjlib-util/types.h \
+  ../../pjlib-util/include/pjlib-util/config.h \
+  ../../pjlib-util/include/pjlib-util/scanner_cis_bitwise.h \
+  ../include/pjsip/sip_auth.h ../include/pjsip/sip_auth_msg.h \
+  ../include/pjsip/sip_errno.h ../../pjlib/include/pj/errno.h \
+  ../../pjlib/include/pj/compat/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdarg.h \
+  ../include/pjsip/sip_transport.h ../include/pjsip/sip_parser.h \
+  ../include/pjsip/sip_resolve.h \
+  ../../pjlib-util/include/pjlib-util/resolver.h \
+  ../../pjlib-util/include/pjlib-util/dns.h \
+  ../../pjlib/include/pj/sock.h ../../pjlib/include/pj/compat/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/int-ll64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/pthread_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/uio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sa_family_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/select.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/timespec.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sigcontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sve_context.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/signal_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal-defs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ucontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/user.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/libc-compat.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_msfilter.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/in_addr.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_mreq_source.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/byteorder.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/byteorder/little_endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ipv6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in_systm.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/ip.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/net/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/hdlc/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ifaddrs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arpa/inet.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits-common.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tty.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno-base.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netdb.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/getopt.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/lockf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/seek_constants.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sysconf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_unistd_inlines.h \
+  ../../pjlib/include/pj/ioqueue.h ../../pjlib/include/pj/timer.h \
+  ../../pjlib/include/pj/lock.h ../include/pjsip/sip_util.h \
+  ../../pjmedia/include/pjmedia/sdp_neg.h \
+  ../../pjmedia/include/pjmedia/sdp.h \
+  ../../pjmedia/include/pjmedia/types.h \
+  ../../pjmedia/include/pjmedia/config.h \
+  ../../pjmedia/include/pjmedia/config_auto.h \
+  ../include/pjsip/sip_endpoint.h ../include/pjsip/sip_event.h \
+  ../include/pjsip/sip_module.h ../include/pjsip/sip_transaction.h \
+  ../../pjlib/include/pj/ctype.h ../../pjlib/include/pj/compat/ctype.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ctype.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ctype_inlines.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/xlocale.h \
+  ../../pjlib/include/pj/log.h ../../pjlib/include/pj/os.h \
+  ../../pjlib/include/pj/pool.h ../../pjlib/include/pj/rand.h \
+  ../../pjlib/include/pj/string.h ../../pjlib/include/pj/compat/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/strcasecmp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/alloca.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/malloc.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_stdlib_inlines.h
+output/pjsip-ua-aarch64-unknown-linux-android/sip_timer.o: ../src/pjsip-ua/sip_timer.c ../include/pjsip-ua/sip_timer.h \
+  ../include/pjsip-ua/sip_inv.h ../include/pjsip/sip_dialog.h \
+  ../include/pjsip/sip_msg.h ../include/pjsip/sip_types.h \
+  ../include/pjsip/sip_config.h ../../pjlib/include/pj/types.h \
+  ../../pjlib/include/pj/config.h \
+  ../../pjlib/include/pj/compat/cc_clang.h \
+  ../../pjlib/include/pj/compat/os_auto.h \
+  ../../pjlib/include/pj/compat/m_auto.h \
+  ../../pjlib/include/pj/compat/size_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/__stddef_max_align_t.h \
+  ../../pjlib/include/pj/config_site.h \
+  ../../pjlib/include/pj/config_site_sample.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdint.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wchar_limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/cdefs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/versioning.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/api-level.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h \
+  ../../pjlib/include/pj/limits.h ../../pjlib/include/pj/compat/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/float.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/limits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/posix_limits.h \
+  ../include/pjsip/sip_autoconf.h ../include/pjsip/sip_uri.h \
+  ../../pjlib/include/pj/assert.h ../../pjlib/include/pj/compat/assert.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/assert.h \
+  ../../pjlib/include/pj/list.h \
+  ../../pjlib-util/include/pjlib-util/scanner.h \
+  ../../pjlib-util/include/pjlib-util/types.h \
+  ../../pjlib-util/include/pjlib-util/config.h \
+  ../../pjlib-util/include/pjlib-util/scanner_cis_bitwise.h \
+  ../include/pjsip/sip_auth.h ../include/pjsip/sip_auth_msg.h \
+  ../include/pjsip/sip_errno.h ../../pjlib/include/pj/errno.h \
+  ../../pjlib/include/pj/compat/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/17/include/stdarg.h \
+  ../include/pjsip/sip_transport.h ../include/pjsip/sip_parser.h \
+  ../include/pjsip/sip_resolve.h \
+  ../../pjlib-util/include/pjlib-util/resolver.h \
+  ../../pjlib-util/include/pjlib-util/dns.h \
+  ../../pjlib/include/pj/sock.h ../../pjlib/include/pj/compat/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/int-ll64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/bitsperlong.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/stddef.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/compiler.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/posix_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/pthread_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock64.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/flock.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/sockios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/uio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sa_family_t.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/socket.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/select.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/timespec.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/time_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sigcontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/sve_context.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/signal_types.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/signal-defs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/siginfo.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ucontext.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/user.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/libc-compat.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/in.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_msfilter.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/in_addr.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ip_mreq_source.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/byteorder.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/byteorder/little_endian.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/swab.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ipv6.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/in_systm.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/ip.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netinet/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tcp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/net/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/if.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/hdlc/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/ifaddrs.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/arpa/inet.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/sys/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termios.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/termbits-common.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/ioctls.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/tty.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/ioctl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android/asm/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/asm-generic/errno-base.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/netdb.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fcntl.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/getopt.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/lockf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/seek_constants.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/sysconf.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/unistd.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_unistd_inlines.h \
+  ../../pjlib/include/pj/ioqueue.h ../../pjlib/include/pj/timer.h \
+  ../../pjlib/include/pj/lock.h ../include/pjsip/sip_util.h \
+  ../../pjmedia/include/pjmedia/sdp_neg.h \
+  ../../pjmedia/include/pjmedia/sdp.h \
+  ../../pjmedia/include/pjmedia/types.h \
+  ../../pjmedia/include/pjmedia/config.h \
+  ../../pjmedia/include/pjmedia/config_auto.h \
+  ../include/pjsip/print_util.h ../include/pjsip/sip_endpoint.h \
+  ../include/pjsip/sip_event.h ../include/pjsip/sip_transaction.h \
+  ../../pjlib/include/pj/log.h ../../pjlib/include/pj/math.h \
+  ../../pjlib/include/pj/string.h ../../pjlib/include/pj/compat/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/xlocale.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/strcasecmp.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/string.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdio.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/alloca.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/linux/wait.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/malloc.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/fortify/stdlib.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/legacy_stdlib_inlines.h \
+  ../../pjlib/include/pj/compat/high_precision.h \
+  /pjsip/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/math.h \
+  ../../pjlib/include/pj/os.h ../../pjlib/include/pj/pool.h
