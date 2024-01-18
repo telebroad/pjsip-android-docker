@@ -59,7 +59,7 @@ WORKDIR /pjsip
 
 COPY ./start.sh .
 
-WORKDIR /pjsip/pjproject/pjsip-apps/src/swig
+# WORKDIR /pjsip/pjproject/pjsip-apps/src/swig
 # RUN make
 
 ENTRYPOINT ["./start.sh"]
