@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   pjsip-android:
+    platform: linux/amd64
     build:
       context: .  # Path to your Dockerfile
       dockerfile: Dockerfile  # Name of your Dockerfile
