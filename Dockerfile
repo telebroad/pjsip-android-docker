@@ -26,11 +26,7 @@ ADD https://dl.google.com/android/repository/android-ndk-r26b-linux.zip .
 RUN unzip android-ndk-r26b-linux.zip && \
     rm android-ndk-r26b-linux.zip
 
-
-
 WORKDIR /pjsip/openssl_for_android
-
-
 
 # downloading openssl-v3.2.0
 ADD https://github.com/openssl/openssl/releases/download/openssl-3.2.0/openssl-3.2.0.tar.gz .
@@ -55,6 +51,9 @@ RUN cp -r ${OPENSSL_SOURCES_PATH}/* ${OPENSSL_TMP_FOLDER}
 
 ENV PATH=${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/linux-x86_64/bin:${ANDROID_NDK_ROOT}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:${ANDROID_NDK_ROOT}/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin:${PATH}
 WORKDIR ${OPENSSL_TMP_FOLDER}
+
+RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: ./Configure android-arm64 -D__ANDROID_API__=${ANDROID_TARGET_API} -fPIC no-asm no-shared no-tests --prefix=${OUTPUT_PATH}" \
+    | tee -a /pjsip/build_pjsip.log
 RUN ./Configure android-arm64 -D__ANDROID_API__=${ANDROID_TARGET_API} -fPIC no-asm no-shared no-tests --prefix=${OUTPUT_PATH}
 RUN mkdir -p ${OUTPUT_PATH}
 RUN make && make install
@@ -65,7 +64,8 @@ RUN rm -rf ${OUTPUT_PATH}/ssl
 RUN rm -rf ${OUTPUT_PATH}/lib/engines*
 RUN rm -rf ${OUTPUT_PATH}/lib/pkgconfig
 RUN rm -rf ${OUTPUT_PATH}/lib/ossl-modules
-RUN echo "Build completed! Check output libraries in ${OUTPUT_PATH}"
+RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: Build-completed! :: Check output libraries in ${OUTPUT_PATH}" \
+    | tee -a /pjsip/build_pjsip.log
 
 # Building pjsip with openssl
 WORKDIR /pjsip/openssl_for_android/openssl-3.2.0
@@ -75,17 +75,14 @@ ENV TARGET_ABI=${ANDROID_TARGET_ABI}
 COPY config_site.h /pjsip/pjproject/pjlib/include/pj/.
 
 # https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#building-pjsip
-RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: PJSIP-CONFIG :: ./configure-android --use-ndk-cflags --with-ssl=/pjsip/openssl_for_android/openssl-3.2.0" >> /pjsip/build_pjsip.log 2>&1
+RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: PJSIP-CONFIG :: ./configure-android --use-ndk-cflags --with-ssl=/pjsip/openssl_for_android/openssl-3.2.0" \
+    | tee -a /pjsip/build_pjsip.log 
 
-RUN ./configure-android --use-ndk-cflags --with-ssl=${OUTPUT_PATH} >> /pjsip/build_pjsip.log 2>&1
-RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: PJSIP-BUILD :: make dep && make clean && make" >> /pjsip/build_pjsip.log 2>&1
-RUN make dep && make clean && make >> /pjsip/build_pjsip.log 2>&1
-
-# building the sample app to get the swig files
-
-RUN cd /pjsip/pjproject/pjsip-apps/src/swig
-RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: APP-BUILD :: make" >> /pjsip/build_pjsip.log 2>&1
-RUN make >> /pjsip/build_pjsip.log 2>&1
+RUN ./configure-android --use-ndk-cflags --with-ssl=${OUTPUT_PATH} | tee -a /pjsip/build_pjsip.log 
+RUN echo "[$(date '+%Y-%m-%d %H:%M:%S')]: PJSIP-BUILD :: make dep && make clean && make" \
+    | tee -a /pjsip/build_pjsip.log
+RUN make dep && make clean && make \
+    | tee -a /pjsip/build_pjsip.log
 
 
 WORKDIR /pjsip

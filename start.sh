@@ -1,7 +1,12 @@
 #!/bin/sh
 
+# building the sample app to get the swig files
+cd /pjsip/pjproject/pjsip-apps/src/swig
+echo "[$(date '+%Y-%m-%d %H:%M:%S')]: APP-BUILD :: make" >> /pjsip/build_pjsip.log 2>&1
+make | tee -a /pjsip/build_pjsip.log
 
 
+rm -r /pjsip/build/*
 cp -r /pjsip/pjproject/pjsip /pjsip/build/
 cp -r /pjsip/pjproject/pjsip-apps/src/swig /pjsip/build/
 cp /pjsip/build_pjsip.log /pjsip/build/
