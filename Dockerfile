@@ -1,4 +1,5 @@
-FROM ubuntu 
+# syntax=docker/dockerfile:1
+FROM ubuntu AS builder
 
 LABEL authors="Isaac Weingarten, Yehuda Goldshtein"
 
@@ -59,31 +60,45 @@ ENV OUTPUT_PATH=${WORK_PATH}/openssl_3.2.0
 
 
 COPY ./build_openssl.sh .
-RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV8} ${GCC_VERSION} & \
-    ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV7} ${GCC_VERSION} & \
-    ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_AMD64} ${GCC_VERSION} & \
-    wait
-
-# Building pjsip with openssl
-
-WORKDIR /pjsip/pjproject
-
 COPY config_site.h /pjsip/pjproject/pjlib/include/pj/.
 
-COPY build_pjsip.sh .
+COPY build_pjsip.sh /pjsip/pjproject
 
 
-# all other platforms need to be compiled before arm64-v8a because the compiler only outputs arm64-v8a folder
-# https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#trying-our-sample-application-and-creating-your-own:~:text=If%20you%20are%20building%20for%20other%20target%20ABI%2C%20you%E2%80%99ll%20need%20to%20manually%20move
-RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_AMD64} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_AMD64}
-RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_ARMV7} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_ARMV7}
+
+FROM builder AS build-ARMV8
+WORKDIR /pjsip/openssl_for_android
+RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV8} ${GCC_VERSION}
+WORKDIR /pjsip/pjproject
 RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_ARMV8} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_ARMV8}
+
+
+FROM builder AS build-ARMV7
+WORKDIR /pjsip/openssl_for_android
+RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV7} ${GCC_VERSION}
+WORKDIR /pjsip/pjproject
+RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_ARMV7} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_ARMV7}
+
+
+FROM builder AS build-AMD64
+WORKDIR /pjsip/openssl_for_android
+RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_AMD64} ${GCC_VERSION}
+WORKDIR /pjsip/pjproject
+RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_AMD64} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_AMD64}
+
+
+FROM ubuntu
+# jniLibs/arm64-v8a
+COPY --from=build-ARMV8 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_ARMV8}/
+COPY --from=build-ARMV8 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-ARMV7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_ARMV7}/
+COPY --from=build-ARMV7 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-AMD64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_AMD64}/
+COPY --from=build-AMD64 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+
 
 WORKDIR /pjsip
 
 COPY ./copy_results.sh .
 
 ENTRYPOINT ["./copy_results.sh"]
-
-# to keep the docker from exting
-# ENTRYPOINT [ "tail","-f","/dev/null" ]

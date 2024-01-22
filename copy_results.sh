@@ -1,12 +1,10 @@
 #!/bin/sh
 
 
-FOLDER=$(date '+%Y_%m_%d_%H_%M_%S')
+FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
 # cp -r /pjsip/pjproject/pjsip /pjsip/build/$FOLDER
-cp -r /pjsip/openssl_for_android /pjsip/build/$FOLDER/openssl_for_android & \
-cp -r /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2 /pjsip/build/$FOLDER/pjsua2 & \
-cp /pjsip/build_pjsip.log /pjsip/build/$FOLDER & \
+cp -r /pjsip/releases /pjsip/build/$FOLDER
 wait
 
 
