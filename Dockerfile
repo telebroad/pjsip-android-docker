@@ -81,6 +81,5 @@ COPY ./start.sh .
 
 ENV ANDROID_TARGET_ABIS="${ANDROID_TARGET_ABI_ARMV8},${ANDROID_TARGET_ABI_ARMV7}"
 ENTRYPOINT ["./start.sh"]
-# ENTRYPOINT ["/bin/bash","./start.sh"]
 
 # ENTRYPOINT [ "tail","-f","/dev/null" ]
