@@ -88,13 +88,19 @@ RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_AMD64} ${OUTPUT_PATH}_${ANDROID_TARGET
 
 
 FROM ubuntu
-# jniLibs/arm64-v8a
+
+
 COPY --from=build-ARMV8 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_ARMV8}/
 COPY --from=build-ARMV8 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-ARMV8 /pjsip/${ANDROID_TARGET_ABI_ARMV8}/build_pjsip.log /pjsip/releases/pjsip/build_pjsip.log
+
 COPY --from=build-ARMV7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_ARMV7}/
 COPY --from=build-ARMV7 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-ARMV8 /pjsip/${ANDROID_TARGET_ABI_ARMV7}/build_pjsip.log /pjsip/releases/pjsip/build_pjsip.log
+
 COPY --from=build-AMD64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_AMD64}/
 COPY --from=build-AMD64 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-ARMV8 /pjsip/${ANDROID_TARGET_ABI_AMD64}/build_pjsip.log /pjsip/releases/pjsip/build_pjsip.log
 
 
 WORKDIR /pjsip

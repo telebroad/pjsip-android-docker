@@ -1,5 +1,5 @@
 #!/bin/sh
-
+CFLAGS="-g"
 TARGET_ABI=$1
 OUTPUT_PATH=$2
 # https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#building-pjsip
