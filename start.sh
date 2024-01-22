@@ -1,20 +1,17 @@
 #!/bin/sh
 
-# building the sample app to get the swig files
-cd /pjsip/pjproject/pjsip-apps/src/swig
-echo "[$(date '+%Y-%m-%d %H:%M:%S')]: APP-BUILD :: make" >> /pjsip/build_pjsip.log 2>&1
-make | tee -a /pjsip/build_pjsip.log
-
-
 rm -r /pjsip/build/*
 cp -r /pjsip/pjproject/pjsip /pjsip/build/
-cp -r /pjsip/pjproject/pjsip-apps/src/swig /pjsip/build/
+cp -r /pjsip/openssl_for_android /pjsip/build/
+cp -r /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2 /pjsip/build/
 cp /pjsip/build_pjsip.log /pjsip/build/
 
-echo "COPIED FILES"
-echo "to find files go to /pjsip/build/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a"
+
+echo "to find files go to /pjsip/build/swig/java/android/pjsua2/src/main/jniLibs/"
+
 echo "/pjsip/build should be bind to build"
+echo "Done!"
 
-# top -b
 
-read -p "Press Enter to continue..."
+
+tail -f /dev/null

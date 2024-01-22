@@ -11,3 +11,15 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S')]: PJSIP-BUILD :: make dep && make clean && m
     | tee -a /pjsip/build_pjsip.log
 make dep && make clean && make \
     | tee -a /pjsip/build_pjsip.log
+
+
+cd /pjsip/pjproject/pjsip-apps/src/swig
+echo "Processing element: $TARGET_ABI"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')]: APP-BUILD $TARGET_ABI :: make" >> /pjsip/build_pjsip.log 2>&1
+make | tee -a /pjsip/build_pjsip.log
+
+
+if [ "$TARGET_ABI" != "arm64-v8a" ]; then
+    mv /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a \
+        /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/${TARGET_ABI}/
+fi
