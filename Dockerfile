@@ -12,7 +12,7 @@ RUN apt-get update && \
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get install -y git gcc build-essential unzip make openjdk-11-jdk swig libopus-dev tzdata
-ARG TZ
+ARG TZ=New_York
 ENV TZ=${TZ}
 
 RUN ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime
@@ -87,24 +87,23 @@ WORKDIR /pjsip/pjproject
 RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_AMD64} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_AMD64}
 
 
-FROM ubuntu
+FROM builder
 
-
-COPY --from=build-ARMV8 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_ARMV8}/
+COPY --from=build-ARMV8 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a /pjsip/releases/jniLibs/${ANDROID_TARGET_ABI_ARMV8}/
 COPY --from=build-ARMV8 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
-COPY --from=build-ARMV8 /pjsip/${ANDROID_TARGET_ABI_ARMV8}/build_pjsip.log /pjsip/releases/pjsip/build_pjsip.log
+COPY --from=build-ARMV8 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV8}.log
 
-COPY --from=build-ARMV7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_ARMV7}/
+COPY --from=build-ARMV7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a /pjsip/releases/jniLibs/${ANDROID_TARGET_ABI_ARMV7}/
 COPY --from=build-ARMV7 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
-COPY --from=build-ARMV8 /pjsip/${ANDROID_TARGET_ABI_ARMV7}/build_pjsip.log /pjsip/releases/pjsip/build_pjsip.log
+COPY --from=build-ARMV7 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log
 
-COPY --from=build-AMD64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/ /pjsip/releases/${ANDROID_TARGET_ABI_AMD64}/
+COPY --from=build-AMD64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a /pjsip/releases/jniLibs/${ANDROID_TARGET_ABI_AMD64}/
 COPY --from=build-AMD64 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
-COPY --from=build-ARMV8 /pjsip/${ANDROID_TARGET_ABI_AMD64}/build_pjsip.log /pjsip/releases/pjsip/build_pjsip.log
+COPY --from=build-AMD64 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log
 
 
 WORKDIR /pjsip
 
 COPY ./copy_results.sh .
 
-ENTRYPOINT ["./copy_results.sh"]
+ENTRYPOINT [ "/bin/sh", "-c", "./copy_results.sh"]

@@ -19,7 +19,7 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: APP-BUILD $TARGET_ABI :: make" >> /pjsi
 make | tee -a /pjsip/build_pjsip.log
 
 
-if [ "$TARGET_ABI" != "arm64-v8a" ]; then
-    mv /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a \
-        /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/${TARGET_ABI}/
-fi
+# if [ "$TARGET_ABI" != "arm64-v8a" ]; then
+#     mv /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/arm64-v8a \
+#         /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/${TARGET_ABI}/
+# fi

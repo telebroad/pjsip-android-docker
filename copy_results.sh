@@ -3,6 +3,9 @@
 
 FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
+echo "FOLDER: $FOLDER"
+
+
 # cp -r /pjsip/pjproject/pjsip /pjsip/build/$FOLDER
 cp -r /pjsip/releases /pjsip/build/$FOLDER
 wait
@@ -15,4 +18,4 @@ echo "Done!"
 
 
 # to keep the bash from exting
-# tail -f /dev/null
+tail -f /dev/null
