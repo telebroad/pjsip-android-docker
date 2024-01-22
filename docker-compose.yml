@@ -4,12 +4,13 @@ services:
   pjsip-android:
     platform: linux/amd64
     build:
-      context: .  # Path to your Dockerfile
-      dockerfile: Dockerfile  # Name of your Dockerfile
-    image: pjsip-android-docker:latest  # Name of the image to build
-    container_name: pjsip-android-docker  # Name of the container
+      context: . # Path to your Dockerfile
+      dockerfile: Dockerfile # Name of your Dockerfile
+      args:
+        TZ: America/New_York
+    image: pjsip-android-docker:latest # Name of the image to build
+    container_name: pjsip-android-docker # Name of the container
     volumes:
       - ./build:/pjsip/build # Mount local 'build' directory to 'pjsip/build' in the container
     environment:
-      - a=1
-
+      - TZ=America/New_York

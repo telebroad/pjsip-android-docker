@@ -7,9 +7,16 @@ ENV DOCKER_DEFAULT_PLATFORM=linux/amd64
 RUN apt search openjdk
 
 RUN apt-get update && \ 
-    apt-get upgrade -y && \
-    apt-get install git gcc build-essential unzip make openjdk-11-jdk swig libopus-dev -y && \
-    apt-get clean
+    apt-get upgrade -y 
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get install -y git gcc build-essential unzip make openjdk-11-jdk swig libopus-dev tzdata
+ARG TZ
+ENV TZ=${TZ}
+
+RUN ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN apt-get clean
 
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
 
@@ -51,7 +58,6 @@ ENV OUTPUT_PATH=${WORK_PATH}/openssl_3.2.0
 
 
 
-ENV PATH=${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/linux-x86_64/bin:${ANDROID_NDK_ROOT}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin:${ANDROID_NDK_ROOT}/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin:${PATH}
 COPY ./build_openssl.sh .
 RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV8} ${GCC_VERSION} & \
     ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV7} ${GCC_VERSION} & \
@@ -73,13 +79,11 @@ RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_AMD64} ${OUTPUT_PATH}_${ANDROID_TARGET
 RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_ARMV7} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_ARMV7}
 RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_ARMV8} ${OUTPUT_PATH}_${ANDROID_TARGET_ABI_ARMV8}
 
-
-
 WORKDIR /pjsip
 
-COPY ./start.sh .
+COPY ./copy_results.sh .
 
-ENV ANDROID_TARGET_ABIS="${ANDROID_TARGET_ABI_ARMV8},${ANDROID_TARGET_ABI_ARMV7}"
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["./copy_results.sh"]
 
+# to keep the docker from exting
 # ENTRYPOINT [ "tail","-f","/dev/null" ]
