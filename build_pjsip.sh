@@ -1,5 +1,5 @@
 #!/bin/sh
-CFLAGS="-g"
+
 OPENSSL_OUTPUT_PATH=${OUTPUT_PATH}_${TARGET_ABI}
 
 # https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#building-pjsip

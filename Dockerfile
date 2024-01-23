@@ -77,6 +77,7 @@ ENV TARGET_ABI=${ANDROID_TARGET_ABI_ARMV8}
 WORKDIR /pjsip/openssl_for_android
 RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV8} ${GCC_VERSION}
 WORKDIR /pjsip/pjproject
+ENV CFLAGS=
 RUN ./build_pjsip.sh
 
 
@@ -85,6 +86,7 @@ ENV TARGET_ABI=${ANDROID_TARGET_ABI_ARMV7}
 WORKDIR /pjsip/openssl_for_android
 RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV7} ${GCC_VERSION}
 WORKDIR /pjsip/pjproject
+ENV CFLAGS=
 RUN ./build_pjsip.sh
 
 
@@ -93,6 +95,7 @@ ENV TARGET_ABI=${ANDROID_TARGET_ABI_AMD64}
 WORKDIR /pjsip/openssl_for_android
 RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_AMD64} ${GCC_VERSION}
 WORKDIR /pjsip/pjproject
+ENV CFLAGS=
 RUN ./build_pjsip.sh
 
 

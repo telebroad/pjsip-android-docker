@@ -14,3 +14,4 @@ services:
       - ./build:/pjsip/build # Mount local 'build' directory to 'pjsip/build' in the container
     environment:
       - TZ=America/New_York
+      - CFLAGS=-g
