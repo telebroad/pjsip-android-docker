@@ -1,12 +1,15 @@
 #!/bin/sh
 CFLAGS="-g"
-TARGET_ABI=$1
-OUTPUT_PATH=$2
+OPENSSL_OUTPUT_PATH=${OUTPUT_PATH}_${TARGET_ABI}
+
 # https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#building-pjsip
-echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: ./configure-android --use-ndk-cflags --with-ssl=/pjsip/openssl_for_android/openssl-3.2.0" \
+echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI} ./configure-android --use-ndk-cflags --with-ssl=${OPENSSL_OUTPUT_PATH}" \
     | tee -a /pjsip/build_pjsip.log 
 
-./configure-android --use-ndk-cflags --with-ssl=${OUTPUT_PATH} | tee -a /pjsip/build_pjsip.log 
+
+
+
+./configure-android --use-ndk-cflags --with-ssl=${OPENSSL_OUTPUT_PATH} | tee -a /pjsip/build_pjsip.log 
 echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-BUILD :: make dep && make clean && make" \
     | tee -a /pjsip/build_pjsip.log
 make dep && make clean && make \
