@@ -18,4 +18,4 @@ echo "Done!"
 
 
 # to keep the bash from exting
-tail -f /dev/null
+# tail -f /dev/null

@@ -1,6 +1,7 @@
 #include <pj/config_site_sample.h>
 #define PJ_CONFIG_ANDROID 1
 #define PJMEDIA_HAS_VIDEO 1
+#define PJMEDIA_HAS_ANDROID_MEDIACODEC 1
 #define PJMEDIA_HAS_AND_MEDIA_H264 1
 // #define PJMEDIA_HAS_AND_MEDIA_VP8 1
 // #define PJMEDIA_HAS_AND_MEDIA_VP9 1
