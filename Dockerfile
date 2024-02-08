@@ -47,7 +47,7 @@ RUN tar xzf openssl-3.2.0.tar.gz && \
 # used https://github.com/217heidai/openssl_for_android/blob/master/openssl_build.sh
 ENV OPENSSL_SOURCES_PATH=/pjsip/openssl_for_android/openssl-3.2.0
 ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-r26b
-ENV ANDROID_TARGET_API=21
+ENV ANDROID_TARGET_API=30
 ENV ANDROID_TARGET_ABI_ARMV8=arm64-v8a
 ENV ANDROID_TARGET_ABI_ARMV7=armeabi-v7a
 ENV ANDROID_TARGET_ABI_AMD64=x86_64

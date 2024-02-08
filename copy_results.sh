@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 
 FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
