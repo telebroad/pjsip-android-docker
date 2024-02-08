@@ -1,5 +1,4 @@
-#!/bin/sh
-
+#!/bin/sh -e
 
 FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
@@ -11,7 +10,7 @@ cp -r /pjsip/releases /pjsip/build/$FOLDER
 wait
 
 
-echo "to find files go to /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/"
+echo "to find files go to ${PJ_PROJECT}/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/"
 
 echo "pjsip-android-docker:/pjsip/build/$FOLDER/pjsua2 is bind to /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2"
 echo "Done!"
