@@ -12,7 +12,7 @@ echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI
 ./configure-android --use-ndk-cflags --with-ssl=${OPENSSL_OUTPUT_PATH} --enable-video | tee -a /pjsip/build_pjsip.log 
 echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-BUILD :: make dep && make clean && make" \
     | tee -a /pjsip/build_pjsip.log
-make dep && make clean && make \
+make dep -v && make clean -v && make -v \
     | tee -a /pjsip/build_pjsip.log
 
 
