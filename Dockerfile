@@ -28,7 +28,9 @@ RUN swig -version
 WORKDIR /pjsip
 
 RUN git clone https://github.com/pjsip/pjproject.git
-
+WORKDIR /pjsip/pjproject
+RUN git checkout tags/2.13.1
+WORKDIR /pjsip
 
 # downloading android NDK
 ADD https://dl.google.com/android/repository/android-ndk-r26b-linux.zip .
