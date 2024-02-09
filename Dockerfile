@@ -33,10 +33,10 @@ RUN git checkout tags/2.12.1
 WORKDIR /pjsip
 
 # downloading android NDK
-ADD https://dl.google.com/android/repository/android-ndk-r26b-linux.zip .
+ADD https://dl.google.com/android/repository/android-ndk-r25c-linux.zip .
 
-RUN unzip android-ndk-r26b-linux.zip && \
-    rm android-ndk-r26b-linux.zip
+RUN unzip android-ndk-r25c-linux.zip && \
+    rm android-ndk-r25c-linux.zip
 
 WORKDIR /pjsip/openssl_for_android
 
@@ -48,7 +48,7 @@ RUN tar xzf openssl-3.2.0.tar.gz && \
 # starting the build for openssl 
 # used https://github.com/217heidai/openssl_for_android/blob/master/openssl_build.sh
 ENV OPENSSL_SOURCES_PATH=/pjsip/openssl_for_android/openssl-3.2.0
-ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-r26b
+ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-r25c
 ENV ANDROID_TARGET_API=30
 ENV ANDROID_TARGET_ABI_ARMV8=arm64-v8a
 ENV ANDROID_TARGET_ABI_ARMV7=armeabi-v7a
