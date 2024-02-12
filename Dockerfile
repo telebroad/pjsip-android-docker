@@ -11,12 +11,14 @@ RUN apt-get update && \
     apt-get upgrade -y 
 ARG DEBIAN_FRONTEND=noninteractive
 
+
 RUN apt-get install -y git gcc build-essential unzip make openjdk-11-jdk swig libopus-dev tzdata
 ARG TZ=New_York
 ENV TZ=${TZ}
 
 RUN ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
+RUN dpkg-reconfigure gcc build-essential
 RUN apt-get clean
 
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
@@ -53,7 +55,8 @@ ENV ANDROID_TARGET_API=30
 ENV ANDROID_TARGET_ABI_ARMV8=arm64-v8a
 ENV ANDROID_TARGET_ABI_ARMV7=armeabi-v7a
 ENV ANDROID_TARGET_ABI_AMD64=x86_64
-ENV GCC_VERSION=11.4
+ENV GCC_VERSION=4.9
+# ENV GCC_VERSION=11.4
 ARG ANDROID_NDK_PLATFORM=
 ENV APP_PLATFORM=${ANDROID_NDK_PLATFORM}
 
