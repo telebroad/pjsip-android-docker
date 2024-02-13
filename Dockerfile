@@ -41,7 +41,7 @@ WORKDIR /pjsip/openssl_for_android
 # downloading openssl-v3.2.0
 ADD https://github.com/openssl/openssl/releases/download/openssl-3.2.0/openssl-3.2.0.tar.gz .
 RUN tar xzf openssl-3.2.0.tar.gz && \
-    rm openssl-3.2.0.tar.gz
+rm openssl-3.2.0.tar.gz
 
 # starting the build for openssl 
 # used https://github.com/217heidai/openssl_for_android/blob/master/openssl_build.sh
