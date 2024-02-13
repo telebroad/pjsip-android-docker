@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 OPENSSL_OUTPUT_PATH=${OUTPUT_PATH}_${TARGET_ABI}
 
