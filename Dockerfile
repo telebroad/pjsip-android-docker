@@ -5,16 +5,15 @@ LABEL authors="Isaac Weingarten, Yehuda Goldshtein"
 
 ENV DOCKER_DEFAULT_PLATFORM=linux/amd64
 
-# Define MAX_RX_WIDTH and MAX_RX_HEIGHT variables
-ARG MAX_RX_WIDTH=3840
-ARG MAX_RX_HEIGHT=2160
-
-
 RUN apt search openjdk
 
 RUN apt-get update && \ 
     apt-get upgrade -y 
 ARG DEBIAN_FRONTEND=noninteractive
+
+#set video max resolution values
+ARG MAX_RX_WIDTH=3840
+ARG MAX_RX_HEIGHT=2160
 
 RUN apt-get install -y git gcc build-essential unzip make openjdk-11-jdk swig libopus-dev tzdata
 ARG TZ=New_York
@@ -34,7 +33,8 @@ WORKDIR /pjsip
 
 RUN git clone https://github.com/pjsip/pjproject.git
 
-# Modify MAX_RX_WIDTH and MAX_RX_HEIGHT in openh264.cpp and and_vid_mediacodec.cpp using the variables
+
+# Modify MAX_RX_WIDTH and MAX_RX_HEIGHT in openh264.cpp and and_vid_mediacodec.cpp
 RUN sed -i "s/#define MAX_RX_WIDTH\s\+[0-9]\+/#define MAX_RX_WIDTH            ${MAX_RX_WIDTH}/" /pjsip/pjproject/pjmedia/src/pjmedia-codec/openh264.cpp && \
     sed -i "s/#define MAX_RX_HEIGHT\s\+[0-9]\+/#define MAX_RX_HEIGHT           ${MAX_RX_HEIGHT}/" /pjsip/pjproject/pjmedia/src/pjmedia-codec/openh264.cpp && \
     sed -i "s/#define MAX_RX_WIDTH\s\+[0-9]\+/#define MAX_RX_WIDTH            ${MAX_RX_WIDTH}/" /pjsip/pjproject/pjmedia/src/pjmedia-codec/and_vid_mediacodec.cpp && \
