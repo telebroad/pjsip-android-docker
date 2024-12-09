@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh -ex
 
 OPENSSL_OUTPUT_PATH=${WORK_PATH}/openssl_3.4.0_${TARGET_ABI}
 OPUS_OUTPUT_PATH=/pjsip/opus/opus_${TARGET_ABI}  # Adjust if your install path differs

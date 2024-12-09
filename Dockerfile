@@ -7,7 +7,7 @@ ENV DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 RUN apt search openjdk
 
-RUN apt-get update && \ 
+RUN apt-get update && \
     apt-get upgrade -y 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -120,22 +120,26 @@ WORKDIR /pjsip/pjproject
 RUN ./build_pjsip.sh
 
 
-# FROM builder AS build-armv7
-# ENV TARGET_ABI=${ANDROID_TARGET_ABI_ARMV7}
-# WORKDIR /pjsip/openssl_for_android
-# RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV7} ${GCC_VERSION}
-# WORKDIR /pjsip/pjproject
-# ENV CFLAGS=
-# RUN ./build_pjsip.sh
+FROM builder AS build-armv7
+ENV TARGET_ABI=${ANDROID_TARGET_ABI_ARMV7}
+WORKDIR /pjsip/openssl_for_android
+RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV7} ${GCC_VERSION}
+WORKDIR /pjsip/opus
+RUN ./build_opus.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV7}
+WORKDIR /pjsip/pjproject
+ENV CFLAGS=
+RUN ./build_pjsip.sh
 
 
-# FROM builder AS build-amd64
-# ENV TARGET_ABI=${ANDROID_TARGET_ABI_AMD64}
-# WORKDIR /pjsip/openssl_for_android
-# RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_AMD64} ${GCC_VERSION}
-# WORKDIR /pjsip/pjproject
-# ENV CFLAGS=
-# RUN ./build_pjsip.sh
+FROM builder AS build-amd64
+ENV TARGET_ABI=${ANDROID_TARGET_ABI_AMD64}
+WORKDIR /pjsip/openssl_for_android
+RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_AMD64} ${GCC_VERSION}
+WORKDIR /pjsip/opus
+RUN ./build_opus.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_AMD64}
+WORKDIR /pjsip/pjproject
+ENV CFLAGS=
+RUN ./build_pjsip.sh
 
 
 FROM builder
@@ -146,15 +150,15 @@ COPY --from=build-armv8 /pjsip/pjproject/pjsip-apps/src/swig/java /pjsip/release
 COPY --from=build-armv8 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
 COPY --from=build-armv8 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV8}.log
 
-# # COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/jniLibs/
-# COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
-# COPY --from=build-armv7 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
-# COPY --from=build-armv7 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log
+# COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/jniLibs/
+COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
+COPY --from=build-armv7 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-armv7 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log
 
-# # COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/jniLibs/
-# COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
-# COPY --from=build-amd64 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
-# COPY --from=build-amd64 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log
+# COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/jniLibs/
+COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
+COPY --from=build-amd64 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-amd64 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log
 
 
 WORKDIR /pjsip
