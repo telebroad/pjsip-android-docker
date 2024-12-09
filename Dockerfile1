@@ -15,7 +15,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG MAX_RX_WIDTH=3840
 ARG MAX_RX_HEIGHT=2160
 
-RUN apt-get install -y git gcc build-essential unzip make cmake openjdk-11-jdk swig libopus-dev tzdata automake autoconf libtool pkg-config
+RUN apt-get install -y git gcc build-essential unzip make cmake openjdk-11-jdk swig libopus-dev tzdata
 ARG TZ=New_York
 ENV TZ=${TZ}
 
