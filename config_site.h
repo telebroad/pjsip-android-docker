@@ -12,5 +12,5 @@
 #define PJMEDIA_HAS_G722_CODEC 1
 // #define PJMEDIA_HAS_GSM_CODEC 1
 #define PJMEDIA_HAS_G729_CODEC 1
-// #define PJMEDIA_HAS_OPUS_CODEC 1
+#define PJMEDIA_HAS_OPUS_CODEC 1
 #include <pj/config_site_sample.h>
