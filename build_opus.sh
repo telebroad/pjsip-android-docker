@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 ANDROID_TARGET_API=$1
 TARGET_ABI=$2
