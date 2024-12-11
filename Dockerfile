@@ -15,7 +15,24 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG MAX_RX_WIDTH=3840
 ARG MAX_RX_HEIGHT=2160
 
-RUN apt-get install -y git gcc build-essential unzip make cmake openjdk-11-jdk swig libopus-dev tzdata automake autoconf libtool pkg-config
+RUN apt-get update && apt-get install -y \
+    git \
+    gcc \
+    build-essential \
+    unzip \
+    make \
+    cmake \
+    openjdk-11-jdk \
+    swig \
+    libopus-dev \
+    wget \
+    tzdata \
+    automake \
+    autoconf \
+    libtool \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
 ARG TZ=New_York
 ENV TZ=${TZ}
 
@@ -61,21 +78,10 @@ ADD https://github.com/openssl/openssl/releases/download/openssl-3.4.0/openssl-3
 RUN tar xzf openssl-3.4.0.tar.gz && \
     rm openssl-3.4.0.tar.gz
 
-# download opus 
-WORKDIR /pjsip/opus
-
-# ADD https://github.com/xiph/opus/archive/refs/tags/v1.5.2.zip .
-# RUN unzip v1.5.2.zip && \
-#     rm v1.5.2.zip
-
-ADD https://github.com/xiph/opus/releases/download/v1.5.2/opus-1.5.2.tar.gz .
-RUN tar xzf opus-1.5.2.tar.gz && \
-    rm opus-1.5.2.tar.gz
-
 
 # starting the build for openssl 
 # used https://github.com/217heidai/openssl_for_android/blob/master/openssl_build.sh
-ENV OPUS_SOURCES_PATH=/pjsip/opus/opus-1.5.2
+ENV OPUS_SOURCES_PATH=/pjsip/opus/opus-dev-lib
 ENV OPENSSL_SOURCES_PATH=/pjsip/openssl_for_android/openssl-3.4.0
 ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-r25b
 ENV ANDROID_TARGET_API=30
@@ -99,8 +105,31 @@ COPY config_site.h /pjsip/pjproject/pjlib/include/pj/.
 COPY ./build_openssl.sh /pjsip/openssl_for_android/.
 RUN chmod +x ./build_openssl.sh
 
+
+# download opus 
+WORKDIR /pjsip/opus
+
+ADD https://github.com/YehudaGoldshtein/opus/raw/refs/heads/main/opus-dev-lib.zip .
+
+RUN unzip opus-dev-lib.zip
+
 COPY ./build_opus.sh /pjsip/opus/.
 RUN chmod +x /pjsip/opus/build_opus.sh
+
+
+
+# Set the working directory to root (optional, as it's the default)
+WORKDIR /pjsip/opus
+ADD https://github.com/YehudaGoldshtein/opus/blob/main/libopus.so /pjsip/opus
+
+
+#RUN mkdir -p opus-1.5.2/jni 
+    # && \
+    # wget -O opus-1.5.2/jni/Android.mk https://trac.pjsip.org/repos/attachment/ticket/1904/Android.mk
+
+
+
+
 
 COPY build_pjsip.sh /pjsip/pjproject
 RUN chmod +x /pjsip/pjproject/build_pjsip.sh
@@ -114,8 +143,11 @@ FROM builder AS build-armv8
 ENV TARGET_ABI=${ANDROID_TARGET_ABI_ARMV8}
 WORKDIR /pjsip/openssl_for_android
 RUN ./build_openssl.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV8} ${GCC_VERSION}
+
 WORKDIR /pjsip/opus
-RUN ./build_opus.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV8}
+
+
+# RUN ./build_opus.sh ${ANDROID_TARGET_API} ${ANDROID_TARGET_ABI_ARMV8}
 WORKDIR /pjsip/pjproject
 RUN ./build_pjsip.sh
 
@@ -160,5 +192,6 @@ COPY --from=build-armv8 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${AND
 WORKDIR /pjsip
 
 COPY ./copy_results.sh .
+
 
 ENTRYPOINT [ "/bin/sh", "-c", "./copy_results.sh"]

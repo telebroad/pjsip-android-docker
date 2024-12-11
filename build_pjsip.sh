@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 OPENSSL_OUTPUT_PATH=${WORK_PATH}/openssl_3.4.0_${TARGET_ABI}
-OPUS_OUTPUT_PATH=/pjsip/opus/opus_${TARGET_ABI}  # Adjust if your install path differs
+OPUS_OUTPUT_PATH=/pjsip/opus/opus-dev-lib  # Adjust if your install path differs
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI} ./configure-android --use-ndk-cflags --with-ssl=${OPENSSL_OUTPUT_PATH} --with-opus=${OPUS_OUTPUT_PATH} --enable-video" \
     | tee -a /pjsip/build_pjsip.log
