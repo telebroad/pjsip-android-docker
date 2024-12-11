@@ -15,7 +15,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG MAX_RX_WIDTH=3840
 ARG MAX_RX_HEIGHT=2160
 
-RUN apt-get install -y git gcc build-essential unzip make cmake openjdk-11-jdk swig libopus-dev tzdata automake autoconf libtool pkg-config
+RUN apt-get install -y git gcc build-essential 
+RUN apt-get install -y unzip make cmake openjdk-11-jdk 
+RUN apt-get install -y swig libopus-dev tzdata automake autoconf libtool pkg-config
 ARG TZ=New_York
 ENV TZ=${TZ}
 
@@ -148,16 +150,19 @@ FROM builder
 # coping the whole sample app
 COPY --from=build-armv8 /pjsip/pjproject/pjsip-apps/src/swig/java /pjsip/releases/java/
 COPY --from=build-armv8 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-armv8 /pjsip/opus /pjsip/releases/opus
 COPY --from=build-armv8 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV8}.log
 
 # COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/jniLibs/
 COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
 COPY --from=build-armv7 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-armv7 /pjsip/opus /pjsip/releases/opus
 COPY --from=build-armv7 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log
 
 # COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/jniLibs/
 COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
 COPY --from=build-amd64 /pjsip/openssl_for_android /pjsip/releases/openssl_for_android/
+COPY --from=build-amd64 /pjsip/opus /pjsip/releases/opus
 COPY --from=build-amd64 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log
 
 
