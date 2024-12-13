@@ -1,7 +1,7 @@
 # PJSIP-ANDROID-DOCKER
-## building pjsip for android arm64v8 
+## building pjsip for android arm64v8 armv7 amd64
 
-### pjsip is build with video on with SipOverTLS 
+### pjsip is build with video on with OpenSSL for SipOverTLS and Opus
 
 to build the docker run
 ```bash
