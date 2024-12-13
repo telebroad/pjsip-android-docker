@@ -1,7 +1,12 @@
 # syntax=docker/dockerfile:1
-FROM ubuntu:latest AS builder
-
+FROM ubuntu:latest AS base
 LABEL authors="Isaac Weingarten, Yehuda Goldshtein"
+ENV ANDROID_TARGET_ABI_ARMV8=arm64-v8a
+ENV VCPKG_TARGET_PLATFORM_ARMV8=arm64-android
+ENV ANDROID_TARGET_ABI_ARMV7=armeabi-v7a
+ENV VCPKG_TARGET_PLATFORM_ARMV7=arm-neon-android
+ENV ANDROID_TARGET_ABI_AMD64=x86_64
+ENV VCPKG_TARGET_PLATFORM_AMD64=x64-android
 
 ENV DOCKER_DEFAULT_PLATFORM=linux/amd64
 
@@ -16,8 +21,8 @@ ARG MAX_RX_WIDTH=3840
 ARG MAX_RX_HEIGHT=2160
 
 RUN apt-get -y --no-install-recommends install git g++ wget curl zip vim pkg-config tar cmake unzip ca-certificates
-RUN apt-get install -y git gcc build-essential make openjdk-11-jdk
-RUN apt-get install -y swig tzdata automake autoconf libtool
+RUN apt-get install -y git gcc build-essential make openjdk-11-jdk dos2unix
+RUN apt-get install -y swig tzdata automake autoconf libtool rsync pv
 
 
 ARG TZ=New_York
@@ -26,6 +31,9 @@ ENV TZ=${TZ}
 RUN ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt-get clean
+
+FROM base AS builder
+
 
 
 
@@ -38,12 +46,9 @@ ENV ANDROID_NDK_VERSION=r27c
 ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-${ANDROID_NDK_VERSION}
 ENV ANDROID_NDK_HOME=${ANDROID_NDK_ROOT}
 ENV ANDROID_TARGET_API=30
-ENV ANDROID_TARGET_ABI_ARMV8=arm64-v8a
-ENV VCPKG_TARGET_PLATFORM_ARMV8=arm64-android
-ENV ANDROID_TARGET_ABI_ARMV7=armeabi-v7a
-ENV VCPKG_TARGET_PLATFORM_ARMV7=arm-neon-android
-ENV ANDROID_TARGET_ABI_AMD64=x86_64
-ENV VCPKG_TARGET_PLATFORM_AMD64=x64-android
+
+
+
 ENV GCC_VERSION=11.4
 ARG ANDROID_NDK_PLATFORM=android-30
 ENV APP_PLATFORM=${ANDROID_NDK_PLATFORM}
@@ -79,6 +84,7 @@ RUN echo "Verifying changes in openh264.cpp:" && \
 ADD https://dl.google.com/android/repository/android-ndk-${ANDROID_NDK_VERSION}-linux.zip .
 RUN unzip android-ndk-${ANDROID_NDK_VERSION}-linux.zip && \
     rm android-ndk-${ANDROID_NDK_VERSION}-linux.zip
+RUN chmod -R +x ${ANDROID_NDK_ROOT}
 ENV PATH=$PATH:$ANDROID_NDK_ROOT
 ENV PATH="${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/linux-x86_64/bin:${PATH}"
 
@@ -92,6 +98,7 @@ ENV VCPKG_INSTALLED_DIR=${VCPKG_ROOT}/installed
 ENV PATH="${VCPKG_ROOT}:${PATH}"
 WORKDIR /pjsip/pjproject
 COPY ./vcpkg.json .
+RUN dos2unix ./vcpkg.json
 
 # run it only if the baseline is not created yet
 #RUN #vcpkg x-update-baseline --add-initial-baseline
@@ -100,14 +107,13 @@ RUN vcpkg version
 
 RUN ndk-build --version
 
-WORKDIR /pjsip/openssl_for_android
 
-RUN chmod -R +x ${ANDROID_NDK_ROOT}
 
 COPY config_site.h /pjsip/pjproject/pjlib/include/pj/.
-
-
+RUN dos2unix /pjsip/pjproject/pjlib/include/pj/config_site.h
+RUN chmod +x /pjsip/pjproject/pjlib/include/pj/config_site.h
 COPY build_pjsip.sh /pjsip/pjproject
+RUN dos2unix /pjsip/pjproject/build_pjsip.sh
 RUN chmod +x /pjsip/pjproject/build_pjsip.sh
 
 
@@ -135,7 +141,7 @@ ENV CFLAGS=
 RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_AMD64} ${VCPKG_TARGET_PLATFORM_AMD64}
 
 
-FROM builder
+FROM base AS final
 
 
 # from=build-armv8 copy the whole sample app and from the other only the jniLibs
@@ -156,6 +162,8 @@ COPY --from=build-amd64 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${AND
 
 WORKDIR /pjsip
 
-COPY ./copy_results.sh .
+COPY ./copy_results.sh /pjsip/.
+RUN dos2unix /pjsip/copy_results.sh
+RUN chmod +x ./copy_results.sh
 
 ENTRYPOINT [ "/bin/sh", "-c", "./copy_results.sh"]

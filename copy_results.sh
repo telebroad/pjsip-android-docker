@@ -5,9 +5,18 @@ FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
 echo "FOLDER: $FOLDER"
 
-# cp -r /pjsip/pjproject/pjsip /pjsip/build/$FOLDER
-cp -r /pjsip/releases /pjsip/build/$FOLDER
-wait
+rsync -ahr --info=progress2 /pjsip/releases/ /pjsip/build/$FOLDER/ | pv -lep -s $(du -sb /pjsip/releases | awk '{print $1}')
+
+
+prefix1="checking for openssl/ssl.h..."
+grep "^${prefix1}" "/pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV8}.log"
+grep "^${prefix1}" "/pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log"
+grep "^${prefix1}" "/pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log"
+
+prefix2="checking for opus/opus.h..."
+grep "^${prefix2}" "/pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV8}.log"
+grep "^${prefix2}" "/pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log"
+grep "^${prefix2}" "/pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log"
 
 
 echo "to find files go to /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/"
