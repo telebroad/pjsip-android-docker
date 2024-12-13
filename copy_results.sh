@@ -5,11 +5,6 @@ FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
 echo "FOLDER: $FOLDER"
 
-if [ -f /usr/src/opus-1.5.2/opus/opus.h ]; then \
-echo "opus.h exists"; \
-else \
-echo "opus.h does not exist"; \
-fi
 # cp -r /pjsip/pjproject/pjsip /pjsip/build/$FOLDER
 cp -r /pjsip/releases /pjsip/build/$FOLDER
 wait
@@ -22,4 +17,4 @@ echo "Done!"
 
 
 # to keep the bash from exting
-# tail -f /dev/null
+#tail -f /dev/null
