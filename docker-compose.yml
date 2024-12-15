@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile # Name of your Dockerfile
       args:
         TZ: America/New_York
-    image: hub.deploy.telebroad.com/pjsip-android-docker:latest # Name of the image to build
-    container_name: pjsip-android-docker # Name of the container
+    image: ghcr.io/telebroad/pjsip-android-docker/build-pjsip-android:local # Name of the image to build
+    container_name: build-pjsip-android # Name of the container
     volumes:
       - ./build:/pjsip/build # Mount local 'build' directory to 'pjsip/build' in the container
     environment:

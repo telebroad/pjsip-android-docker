@@ -1,0 +1,91 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - "*"
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        # This step checks out the repository code to the runner.
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        # This step logs in to the GitHub Container Registry using the provided credentials.
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Determine Docker Tag and Version
+        id: vars
+        # This step determines the version tag to use for the Docker image.
+        run: |
+          if [ "${{ github.ref_name }}" == "main" ]; then
+            # Fetch all existing tags from the repository
+            git fetch --tags
+          
+            # Check if the current commit already has a version tag
+            current_tag=$(git tag --points-at HEAD | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$')
+          
+            if [ -n "$current_tag" ]; then
+              # If the current commit already has a valid version tag, use it
+              echo "Current commit already has a version tag: $current_tag"
+              new_version="$current_tag"
+            else
+              # Get the latest version tag matching the pattern 'v[0-9]*'
+              latest_tag=$(git tag --list 'v[0-9]*' | sort -V | tail -n 1)
+              echo "Latest tag: $latest_tag"
+          
+              if [ -z "$latest_tag" ]; then
+                # If no tags exist, start with version v1.0.0
+                new_version="v1.0.0"
+              else
+                # Extract the major, minor, and patch numbers from the latest tag
+                major=$(echo $latest_tag | cut -d'.' -f1 | tr -d 'v')
+                minor=$(echo $latest_tag | cut -d'.' -f2)
+                patch=$(echo $latest_tag | cut -d'.' -f3)
+          
+                # Increment the patch version by 1
+                patch=$((patch + 1))
+          
+                # Form the new version tag
+                new_version="v${major}.${minor}.${patch}"
+              fi
+          
+              echo "New version: $new_version"
+          
+              # Tag the current commit with the new version
+              git tag $new_version
+              git push origin $new_version
+            fi
+          
+            # Output the version and latest tags
+            echo "::set-output name=tag::$new_version"
+            echo "::set-output name=latest::latest"
+          else
+            # For non-main branches, use the branch name as the tag
+            echo "::set-output name=tag::${{ github.ref_name }}"
+            echo "::set-output name=latest::${{ github.ref_name }}"
+          fi
+
+      - name: Build Docker Images
+        # This step builds Docker images with the determined tags.
+        run: |
+          docker build \
+            --file Dockerfile \
+            --build-arg TZ=America/New_York \
+            --tag ghcr.io/${{ github.repository }}/pjsip-android-docker:${{ steps.vars.outputs.tag }} \
+            --tag ghcr.io/${{ github.repository }}/pjsip-android-docker:${{ steps.vars.outputs.latest }} .
+
+      - name: Push Docker Images
+        # This step pushes the built Docker images to the GitHub Container Registry.
+        run: |
+          docker push ghcr.io/${{ github.repository }}/pjsip-android-docker:${{ steps.vars.outputs.tag }}
+          docker push ghcr.io/${{ github.repository }}/pjsip-android-docker:${{ steps.vars.outputs.latest }}
