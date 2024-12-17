@@ -35,19 +35,10 @@ RUN apt-get clean
 FROM base AS builder
 
 
-
-
-
-ENV OPUS_VERSION=1.5.2
-ENV OPUS_SOURCES_PATH=/pjsip/opus/opus-${OPUS_VERSION}
-ENV OPENSSL_VERSION=openssl-3.4.0
-ENV OPENSSL_SOURCES_PATH=/pjsip/openssl_for_android/${OPENSSL_VERSION}
 ENV ANDROID_NDK_VERSION=r27c
 ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-${ANDROID_NDK_VERSION}
 ENV ANDROID_NDK_HOME=${ANDROID_NDK_ROOT}
 ENV ANDROID_TARGET_API=30
-
-
 
 ENV GCC_VERSION=11.4
 ARG ANDROID_NDK_PLATFORM=android-30
@@ -88,7 +79,7 @@ RUN chmod -R +x ${ANDROID_NDK_ROOT}
 ENV PATH=$PATH:$ANDROID_NDK_ROOT
 ENV PATH="${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/linux-x86_64/bin:${PATH}"
 
-
+#installing vcpkg
 WORKDIR /
 RUN git clone https://github.com/microsoft/vcpkg.git
 WORKDIR /vcpkg
@@ -106,8 +97,6 @@ RUN dos2unix ./vcpkg.json
 RUN vcpkg version
 
 RUN ndk-build --version
-
-
 
 COPY config_site.h /pjsip/pjproject/pjlib/include/pj/.
 RUN dos2unix /pjsip/pjproject/pjlib/include/pj/config_site.h
@@ -143,17 +132,14 @@ RUN ./build_pjsip.sh ${ANDROID_TARGET_ABI_AMD64} ${VCPKG_TARGET_PLATFORM_AMD64}
 
 FROM base AS final
 
-
 # from=build-armv8 copy the whole sample app and from the other only the jniLibs
 COPY --from=build-armv8 /pjsip/pjproject/pjsip-apps/src/swig/java /pjsip/releases/java/
 COPY --from=build-armv8 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TARGET_ABI_ARMV8}
 COPY --from=build-armv8 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV8}.log
 
-
 COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
 COPY --from=build-armv7 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TARGET_ABI_ARMV7}
 COPY --from=build-armv7 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log
-
 
 COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
 COPY --from=build-amd64 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TARGET_ABI_AMD64}
