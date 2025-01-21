@@ -46,6 +46,7 @@ ENV ANDROID_NDK_VERSION=r27c
 ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-${ANDROID_NDK_VERSION}
 ENV ANDROID_NDK_HOME=${ANDROID_NDK_ROOT}
 ENV ANDROID_TARGET_API=30
+ENV PJ_SIP_VERSION=2.15.1
 
 
 
@@ -64,7 +65,6 @@ RUN swig -version
 WORKDIR /pjsip
 
 RUN git clone https://github.com/pjsip/pjproject.git
-
 
 # Modify MAX_RX_WIDTH and MAX_RX_HEIGHT in openh264.cpp and and_vid_mediacodec.cpp
 RUN sed -i "s/#define MAX_RX_WIDTH\s\+[0-9]\+/#define MAX_RX_WIDTH            ${MAX_RX_WIDTH}/" /pjsip/pjproject/pjmedia/src/pjmedia-codec/openh264.cpp && \
@@ -107,7 +107,8 @@ RUN vcpkg version
 
 RUN ndk-build --version
 
-
+# Checkout the specific tag
+RUN git checkout tags/${PJ_SIP_VERSION} -b stable-${PJ_SIP_VERSION}
 
 COPY config_site.h /pjsip/pjproject/pjlib/include/pj/.
 RUN dos2unix /pjsip/pjproject/pjlib/include/pj/config_site.h
