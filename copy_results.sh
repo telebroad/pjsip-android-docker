@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-
+echo "CONF_DEBUG=${CONF_DEBUG}"
 FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
 echo "FOLDER: $FOLDER"

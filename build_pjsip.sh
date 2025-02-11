@@ -4,6 +4,14 @@ VCPKG_TARGET_PLATFORM=$2
 
 VCPKG_OUTPUT_PATH=/pjsip/pjproject/vcpkg_installed/${VCPKG_TARGET_PLATFORM}/
 
+
+# Check if the environment variable CONF_DEBUG is set to "true"
+if [ "$CONF_DEBUG" = "true" ]; then
+    # Uncomment line 39 (i.e. remove the leading "//") in the file
+    sed -i '39s/^\/\///' /pjsip//pjproject/pjmedia/src/pjmedia/conference.c
+fi
+
+
 # https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#building-pjsip
 echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI} ./configure-android --use-ndk-cflags --with-ssl=${OPENSSL_OUTPUT_PATH} --enable-video" \
     | tee -a /pjsip/build_pjsip.log

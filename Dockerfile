@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:latest AS base
 LABEL authors="Isaac Weingarten, Yehuda Goldshtein"
+
 ENV ANDROID_TARGET_ABI_ARMV8=arm64-v8a
 ENV VCPKG_TARGET_PLATFORM_ARMV8=arm64-android
 ENV ANDROID_TARGET_ABI_ARMV7=armeabi-v7a
@@ -9,6 +10,8 @@ ENV ANDROID_TARGET_ABI_AMD64=x86_64
 ENV VCPKG_TARGET_PLATFORM_AMD64=x64-android
 
 ENV DOCKER_DEFAULT_PLATFORM=linux/amd64
+ARG CONF_DEBUG=false
+
 
 RUN apt search openjdk
 
@@ -58,7 +61,6 @@ RUN git clone https://github.com/pjsip/pjproject.git
 WORKDIR /pjsip/pjproject
 # to run other vesions of pjsip use tags/2.15.1
 ARG PJSIP_VERSION=master
-# to run a spesific release use tags/2.15.1
 RUN git checkout ${PJSIP_VERSION}
 WORKDIR /pjsip
 
@@ -156,5 +158,5 @@ WORKDIR /pjsip
 COPY ./copy_results.sh /pjsip/.
 RUN dos2unix /pjsip/copy_results.sh
 RUN chmod +x ./copy_results.sh
-
+ENV CONF_DEBUG=${CONF_DEBUG}
 ENTRYPOINT [ "/bin/sh", "-c", "./copy_results.sh"]
