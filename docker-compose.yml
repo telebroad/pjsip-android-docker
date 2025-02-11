@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile # Name of your Dockerfile
       args:
         TZ: America/New_York
+        PJSIP_VERSION: master # to run a spesific release use tags/2.15.1 or anythink that can go in git checkout ${PJSIP_VERSION}
     image: hub.deploy.telebroad.com/pjsip-android-docker:latest # Name of the image to build
     container_name: pjsip-android-docker # Name of the container
     volumes:

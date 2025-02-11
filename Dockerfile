@@ -34,7 +34,6 @@ RUN apt-get clean
 
 FROM base AS builder
 
-
 ENV ANDROID_NDK_VERSION=r27c
 ENV ANDROID_NDK_ROOT=/pjsip/android-ndk-${ANDROID_NDK_VERSION}
 ENV ANDROID_NDK_HOME=${ANDROID_NDK_ROOT}
@@ -56,6 +55,12 @@ WORKDIR /pjsip
 
 RUN git clone https://github.com/pjsip/pjproject.git
 
+WORKDIR /pjsip/pjproject
+# to run other vesions of pjsip use tags/2.15.1
+ARG PJSIP_VERSION=master
+# to run a spesific release use tags/2.15.1
+RUN git checkout ${PJSIP_VERSION}
+WORKDIR /pjsip
 
 # Modify MAX_RX_WIDTH and MAX_RX_HEIGHT in openh264.cpp and and_vid_mediacodec.cpp
 RUN sed -i "s/#define MAX_RX_WIDTH\s\+[0-9]\+/#define MAX_RX_WIDTH            ${MAX_RX_WIDTH}/" /pjsip/pjproject/pjmedia/src/pjmedia-codec/openh264.cpp && \
