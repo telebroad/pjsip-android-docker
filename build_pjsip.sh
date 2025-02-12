@@ -6,7 +6,12 @@ OPENSSL_OUTPUT_PATH=/pjsip/pjproject/vcpkg_installed/${VCPKG_TARGET_PLATFORM}/
 OPUS_OUTPUT_PATH=/pjsip/pjproject/vcpkg_installed/${VCPKG_TARGET_PLATFORM}/
 
 # https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#building-pjsip
-echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI} ./configure-android --use-ndk-cflags --with-ssl=${OPENSSL_OUTPUT_PATH} --enable-video" \
+echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI} \
+    ./configure-android \ 
+    --use-ndk-cflags \
+    --with-ssl=${OPENSSL_OUTPUT_PATH} \
+    --with-opus=${OPUS_OUTPUT_PATH} \
+    --enable-video" \
     | tee -a /pjsip/build_pjsip.log
 
 # building pjsip
@@ -16,7 +21,7 @@ CFLAGS="-g -O0" LDFLAGS="-g -O0" \
     --with-ssl=${OPENSSL_OUTPUT_PATH} \
     --with-opus=${OPUS_OUTPUT_PATH} \
     --enable-video | \
-tee -a /pjsip/build_pjsip.log
+    tee -a /pjsip/build_pjsip.log
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-BUILD :: make dep && make clean && make" \
     | tee -a /pjsip/build_pjsip.log
