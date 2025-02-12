@@ -3,7 +3,7 @@
 echo "CONF_DEBUG=${CONF_DEBUG}"
 FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
-echo "FOLDER: $FOLDER"
+echo "FOLDER: ${FOLDER}-${PJSIP_VERSION}-${CONF_DEBUG}"
 
 rsync -ahr --info=progress2 /pjsip/releases/ /pjsip/build/$FOLDER/ | pv -lep -s $(du -sb /pjsip/releases | awk '{print $1}')
 
@@ -22,8 +22,8 @@ grep "^${prefix2}" "/pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log"
 echo "to find files go to /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/"
 
 echo "pjsip-android-docker:/pjsip/build/$FOLDER/pjsua2 is bind to /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2"
-echo "Done!"
+# echo "Done!"
 
 
 # to keep the bash from exting
-#tail -f /dev/null
+tail -f /dev/null
