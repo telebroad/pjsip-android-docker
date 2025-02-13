@@ -7,17 +7,17 @@ ENV DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 RUN apt search openjdk
 
-RUN apt-get update && \
-    apt-get upgrade -y
+RUN apt update && \
+    apt upgrade -y
 
 ARG DEBIAN_FRONTEND=noninteractive
 #set video max resolution values
 ARG MAX_RX_WIDTH=3840
 ARG MAX_RX_HEIGHT=2160
 
-RUN apt-get -y --no-install-recommends install git g++ wget curl zip vim pkg-config tar cmake unzip ca-certificates
-RUN apt-get install -y git gcc build-essential make openjdk-11-jdk
-RUN apt-get install -y swig tzdata automake autoconf libtool
+RUN apt -y --no-install-recommends install git g++ wget curl zip vim pkg-config tar cmake unzip ca-certificates
+RUN apt install -y git gcc build-essential make openjdk-11-jdk
+RUN apt install -y swig tzdata automake autoconf libtool
 
 
 ARG TZ=New_York
@@ -25,7 +25,7 @@ ENV TZ=${TZ}
 
 RUN ln -fs /usr/share/zoneinfo/${TZ} /etc/localtime
 RUN dpkg-reconfigure --frontend noninteractive tzdata
-RUN apt-get clean
+RUN apt clean
 
 
 
@@ -59,6 +59,10 @@ RUN swig -version
 WORKDIR /pjsip
 
 RUN git clone https://github.com/pjsip/pjproject.git
+WORKDIR /pjsip/pjproject
+RUN git fetch --tags
+RUN git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+WORKDIR /pjsip
 
 
 # Modify MAX_RX_WIDTH and MAX_RX_HEIGHT in openh264.cpp and and_vid_mediacodec.cpp
@@ -86,7 +90,11 @@ ENV PATH="${ANDROID_NDK_ROOT}/toolchains/llvm/prebuilt/linux-x86_64/bin:${PATH}"
 WORKDIR /
 RUN git clone https://github.com/microsoft/vcpkg.git
 WORKDIR /vcpkg
+RUN git fetch --tags
+RUN git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+
 RUN ./bootstrap-vcpkg.sh
+
 ENV VCPKG_ROOT=/vcpkg
 ENV VCPKG_INSTALLED_DIR=${VCPKG_ROOT}/installed
 ENV PATH="${VCPKG_ROOT}:${PATH}"
@@ -95,7 +103,7 @@ COPY ./vcpkg.json .
 
 # run it only if the baseline is not created yet
 #RUN #vcpkg x-update-baseline --add-initial-baseline
-
+# RUN vcpkg update
 RUN vcpkg version
 
 RUN ndk-build --version
