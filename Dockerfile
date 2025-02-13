@@ -66,6 +66,14 @@ WORKDIR /pjsip
 
 RUN git clone https://github.com/pjsip/pjproject.git
 
+WORKDIR /pjsip/pjproject
+
+RUN git fetch --tags
+RUN echo "pjsip using tags $(git describe --tags $(git rev-list --tags --max-count=1))"
+RUN git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+WORKDIR /pjsip
+
+
 # Modify MAX_RX_WIDTH and MAX_RX_HEIGHT in openh264.cpp and and_vid_mediacodec.cpp
 RUN sed -i "s/#define MAX_RX_WIDTH\s\+[0-9]\+/#define MAX_RX_WIDTH            ${MAX_RX_WIDTH}/" /pjsip/pjproject/pjmedia/src/pjmedia-codec/openh264.cpp && \
     sed -i "s/#define MAX_RX_HEIGHT\s\+[0-9]\+/#define MAX_RX_HEIGHT           ${MAX_RX_HEIGHT}/" /pjsip/pjproject/pjmedia/src/pjmedia-codec/openh264.cpp && \
@@ -93,9 +101,11 @@ WORKDIR /
 RUN git clone https://github.com/microsoft/vcpkg.git
 WORKDIR /vcpkg
 RUN git fetch --tags
+RUN echo "latest tag $(git describe --tags $(git rev-list --tags --max-count=1))"
 RUN git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
 
 RUN ./bootstrap-vcpkg.sh
+
 ENV VCPKG_ROOT=/vcpkg
 ENV VCPKG_INSTALLED_DIR=${VCPKG_ROOT}/installed
 ENV PATH="${VCPKG_ROOT}:${PATH}"
