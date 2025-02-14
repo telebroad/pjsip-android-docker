@@ -60,8 +60,20 @@ RUN git clone https://github.com/pjsip/pjproject.git
 
 WORKDIR /pjsip/pjproject
 # to run other vesions of pjsip use the tag 2.15.1 or master
-ARG PJSIP_VERSION=master
-RUN git checkout ${PJSIP_VERSION}
+#ARG PJSIP_VERSION=master
+#RUN git checkout ${PJSIP_VERSION}
+
+RUN git fetch --tags
+
+RUN
+RUN if [ -z "$PJSIP_VERSION" ]; then \
+      echo "pjsip using tags $(git describe --tags $(git rev-list --tags --max-count=1))"\
+      git checkout $(git describe --tags $(git rev-list --tags --max-count=1)); \
+    else \
+      echo "pjsip using PJSIP_VERSION=${PJSIP_VERSION}"\
+      git checkout "$PJSIP_VERSION"; \
+    fi
+
 WORKDIR /pjsip
 
 # Modify MAX_RX_WIDTH and MAX_RX_HEIGHT in openh264.cpp and and_vid_mediacodec.cpp
@@ -91,8 +103,11 @@ WORKDIR /
 RUN git clone https://github.com/microsoft/vcpkg.git
 WORKDIR /vcpkg
 RUN git fetch --tags
+RUN echo "latest tag $(git describe --tags $(git rev-list --tags --max-count=1))"
 RUN git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
+
 RUN ./bootstrap-vcpkg.sh
+
 ENV VCPKG_ROOT=/vcpkg
 ENV VCPKG_INSTALLED_DIR=${VCPKG_ROOT}/installed
 ENV PATH="${VCPKG_ROOT}:${PATH}"
@@ -106,6 +121,9 @@ RUN dos2unix ./vcpkg.json
 RUN vcpkg version
 
 RUN ndk-build --version
+
+# Checkout the specific tag
+#RUN git checkout tags/${PJ_SIP_VERSION} -b stable-${PJ_SIP_VERSION}
 
 COPY config_site.h /pjsip/pjproject/pjlib/include/pj/.
 RUN dos2unix /pjsip/pjproject/pjlib/include/pj/config_site.h

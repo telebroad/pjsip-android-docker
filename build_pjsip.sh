@@ -13,16 +13,22 @@ fi
 
 
 # https://docs.pjsip.org/en/latest/get-started/android/build_instructions.html#building-pjsip
-echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI} ./configure-android --use-ndk-cflags --with-ssl=${OPENSSL_OUTPUT_PATH} --enable-video" \
+echo "[$(date '+%Y-%m-%d %H:%M:%S %Z')]: PJSIP-CONFIG :: TARGET_ABI=${TARGET_ABI}
+    ./configure-android \
+    --use-ndk-cflags \
+    --with-ssl=${VCPKG_OUTPUT_PATH} \
+    --with-opus=${VCPKG_OUTPUT_PATH} \
+    --with-bcg729=${VCPKG_OUTPUT_PATH} \
+    --enable-video" \
     | tee -a /pjsip/build_pjsip.log
 
 # building pjsip
 CFLAGS="-g -O0" LDFLAGS="-g -O0" \
     ./configure-android \
     --use-ndk-cflags \
-    --with-ssl=${OPENSSL_OUTPUT_PATH} \
-    --with-opus=${OPENSSL_OUTPUT_PATH} \
-    --with-bcg729=${OPENSSL_OUTPUT_PATH} \
+    --with-ssl=${VCPKG_OUTPUT_PATH} \
+    --with-opus=${VCPKG_OUTPUT_PATH} \
+    --with-bcg729=${VCPKG_OUTPUT_PATH} \
     --enable-video | \
 tee -a /pjsip/build_pjsip.log
 
