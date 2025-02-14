@@ -60,12 +60,11 @@ RUN git clone https://github.com/pjsip/pjproject.git
 
 WORKDIR /pjsip/pjproject
 # to run other vesions of pjsip use the tag 2.15.1 or master
-#ARG PJSIP_VERSION=master
+ARG PJSIP_VERSION=
 #RUN git checkout ${PJSIP_VERSION}
 
 RUN git fetch --tags
 
-RUN
 RUN if [ -z "$PJSIP_VERSION" ]; then \
       echo "pjsip using tags $(git describe --tags $(git rev-list --tags --max-count=1))"\
       git checkout $(git describe --tags $(git rev-list --tags --max-count=1)); \
