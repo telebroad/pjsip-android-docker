@@ -127,20 +127,20 @@ ENV CFLAGS=
 RUN ./build_pjsip.sh "${ANDROID_TARGET_ABI_ARMV8}" "${VCPKG_TARGET_PLATFORM_ARMV8}"
 
 
-FROM builder AS build-armv7
-ENV TARGET_ABI=${ANDROID_TARGET_ABI_ARMV7}
-WORKDIR /pjsip/pjproject
-RUN vcpkg install --triplet ${VCPKG_TARGET_PLATFORM_ARMV7}
-ENV CFLAGS=
-RUN ./build_pjsip.sh "${ANDROID_TARGET_ABI_ARMV7}" "${VCPKG_TARGET_PLATFORM_ARMV7}"
-
-
-FROM builder AS build-amd64
-ENV TARGET_ABI=${ANDROID_TARGET_ABI_AMD64}
-WORKDIR /pjsip/pjproject
-RUN vcpkg install --triplet ${VCPKG_TARGET_PLATFORM_AMD64}
-ENV CFLAGS=
-RUN ./build_pjsip.sh "${ANDROID_TARGET_ABI_AMD64}" "${VCPKG_TARGET_PLATFORM_AMD64}"
+#FROM builder AS build-armv7
+#ENV TARGET_ABI=${ANDROID_TARGET_ABI_ARMV7}
+#WORKDIR /pjsip/pjproject
+#RUN vcpkg install --triplet ${VCPKG_TARGET_PLATFORM_ARMV7}
+#ENV CFLAGS=
+#RUN ./build_pjsip.sh "${ANDROID_TARGET_ABI_ARMV7}" "${VCPKG_TARGET_PLATFORM_ARMV7}"
+#
+#
+#FROM builder AS build-amd64
+#ENV TARGET_ABI=${ANDROID_TARGET_ABI_AMD64}
+#WORKDIR /pjsip/pjproject
+#RUN vcpkg install --triplet ${VCPKG_TARGET_PLATFORM_AMD64}
+#ENV CFLAGS=
+#RUN ./build_pjsip.sh "${ANDROID_TARGET_ABI_AMD64}" "${VCPKG_TARGET_PLATFORM_AMD64}"
 
 
 FROM builder
@@ -152,14 +152,14 @@ COPY --from=build-armv8 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TA
 COPY --from=build-armv8 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV8}.log
 
 
-COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
-COPY --from=build-armv7 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TARGET_ABI_ARMV7}
-COPY --from=build-armv7 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log
+#COPY --from=build-armv7 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
+#COPY --from=build-armv7 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TARGET_ABI_ARMV7}
+#COPY --from=build-armv7 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_ARMV7}.log
 
 
-COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
-COPY --from=build-amd64 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TARGET_ABI_AMD64}
-COPY --from=build-amd64 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log
+#COPY --from=build-amd64 /pjsip/pjproject/pjsip-apps/src/swig/java/android/pjsua2/src/main/jniLibs/ /pjsip/releases/java/android/pjsua2/src/main/jniLibs/
+#COPY --from=build-amd64 /pjsip/pjproject/ /pjsip/releases/pjproject/${ANDROID_TARGET_ABI_AMD64}
+#COPY --from=build-amd64 /pjsip/build_pjsip.log /pjsip/releases/build_pjsip_${ANDROID_TARGET_ABI_AMD64}.log
 
 
 WORKDIR /pjsip
