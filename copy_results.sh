@@ -27,4 +27,5 @@ echo "pjsip-android-docker:/pjsip/build/$FOLDER/pjsua2 is bind to /pjsip/pjproje
 
 
 # to keep the bash from exting
-tail -f /dev/null
+echo "Press enter to exit"
+read -r
