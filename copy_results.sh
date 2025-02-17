@@ -1,6 +1,7 @@
 #!/bin/sh -e
 
 echo "CONF_DEBUG=${CONF_DEBUG}"
+echo "PJSIP_VERSION=${PJSIP_VERSION}"
 FOLDER=$(date '+%Y_%m_%d_%H_%M_%S_%Z')
 
 echo "FOLDER: ${FOLDER}-${PJSIP_VERSION}-${CONF_DEBUG}"

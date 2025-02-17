@@ -66,10 +66,12 @@ ARG PJSIP_VERSION=
 RUN git fetch --tags
 
 RUN if [ -z "$PJSIP_VERSION" ]; then \
-      echo "pjsip using tags $(git describe --tags $(git rev-list --tags --max-count=1))"\
+      echo "pjsip using tags $(git describe --tags $(git rev-list --tags --max-count=1))" \
+      echo "pjsip using tags $(git describe --tags $(git rev-list --tags --max-count=1))" | tee -a /pjsip/build_pjsip.log \
       git checkout $(git describe --tags $(git rev-list --tags --max-count=1)); \
     else \
-      echo "pjsip using PJSIP_VERSION=${PJSIP_VERSION}"\
+      echo "pjsip using PJSIP_VERSION=${PJSIP_VERSION}" \
+      echo "pjsip using PJSIP_VERSION=${PJSIP_VERSION}"  | tee -a /pjsip/build_pjsip.log\
       git checkout "$PJSIP_VERSION"; \
     fi
 
@@ -177,5 +179,6 @@ WORKDIR /pjsip
 COPY ./copy_results.sh /pjsip/.
 RUN dos2unix /pjsip/copy_results.sh
 RUN chmod +x ./copy_results.sh
-ENV CONF_DEBUG=${CONF_DEBUG}
+ENV CONF_DEBUG=${CONF_DEBUG} \
+    PJSIP_VERSION=${PJSIP_VERSION}
 ENTRYPOINT [ "/bin/sh", "-c", "./copy_results.sh"]
